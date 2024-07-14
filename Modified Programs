@@ -1,0 +1,66 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Octopus class
+        var octopus = new Octopus("Will");
+        octopus.GetOctopiInfo();
+
+        // Using the Car struct
+        Car car = new Car("McLaren", "Senna");
+        car.GetCarInfo();
+
+        // Using WriteCubes function
+        WriteCubes();
+    }
+
+    static void WriteCubes()
+    {
+        int CalculateCube(int value) => value * value * value;
+        Console.WriteLine(CalculateCube(3));
+        Console.WriteLine(CalculateCube(4));
+        Console.WriteLine(CalculateCube(5));
+    }
+}
+
+public class Octopus
+{
+    string Name;
+    public int Age = 8;
+    public readonly int Tentacles = 8;
+
+    // Constructor for adding name
+    public Octopus(string name)
+    {
+        Name = name;
+    }
+
+    // Method for getting the octopus info
+    public void GetOctopiInfo()
+    {
+        Console.WriteLine($"This octopus is named {Name}, is {Age} months old, and has {Tentacles} tentacles.");
+    }
+}
+
+public struct Car
+{
+    public readonly int Year;
+    public string Make;
+    public string Model;
+
+    // Constructor for new car fields
+    public Car(string make, string model)
+    {
+        Year = 2017;
+        Make = make;
+        Model = model;
+    }
+
+    // Method for car info
+    public void GetCarInfo()
+    {
+        Console.WriteLine($"This car is a {Year} {Make} {Model}.");
+    }
+}
